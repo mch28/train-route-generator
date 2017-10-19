@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+    <button method="post" action="/make_name">Click to generate new station name</button>
+    <br><br><br>
+
+    {% for station in all_stations %}
+        <li>{{station.id}}, {{station.first_part}}{{station.last_part}}</li>
+    {% endfor %}
+
+    {{ one_item.link_part }}
+
+</body>
+</html>
