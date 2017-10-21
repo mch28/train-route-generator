@@ -8,10 +8,13 @@ $(document).ready(function() {
 		console.log("function working");
 		
 		$.ajax({
-			url: '/get_data/',
+			url: '/name_test/',
 			type: 'POST',
 			success: function(resp){
 				$('div#response').append(resp.data);
+			},
+			error: function(error) {
+				console.log.error;				
 			}
 		})
 		
