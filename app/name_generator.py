@@ -4,11 +4,17 @@ import pandas as pd
 import random
 
 
+
+
 '''Probably will refactor this later'''
 
 class namegen:
 
-    order = 5  # n-size of ngram. will create a set_order method soon
+
+    def __init__(self):
+        self.order = 5 #default
+
+   # order = 5  # n-size of ngram. will create a set_order method soon
 
     def prepare_text(self):
         source = urllib.request.urlopen(

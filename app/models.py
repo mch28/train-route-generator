@@ -1,4 +1,4 @@
-from flask_app import db
+from app import db
 #
 class StationName(db.Model):
 
