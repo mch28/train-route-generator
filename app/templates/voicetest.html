@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <script src="http://code.responsivevoice.org/responsivevoice.js">
+        </script>
+		<title>Station generator</title>
+		<meta name="viewport" content="width=device-width">
+		<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+		<style type="text/css">
+			.container {
+				max-width: 400px;
+				padding-top: 50px;
+
+			}
+
+			input {
+				max-width: 200px;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<div class="container">
+			<h1>Test name generator</h1>
+
+			<!-- Button which will trigger the generation of a new name (eventually a series of names) -->
+			<button class="btn btn-default" id="button">Click to generate new name</button>
+            
+            <br><br><br>
+            <p id="parag">Test paragraph. </p>
+            <audio controls>
+                <source src="../static/152584__kerouac21__london-overground-train-interior-approaches-victoria-station.mp3", type="audio/mp3">
+            </audio>
+			<!-- This area is where the Ajax-returned data is displayed -->
+			<div id="response"> </div>
+
+			<!-- This area is where information from the db is displayed as another test stage -->
+
+			<div id="db_testarea"> </div>
+
+		</div>
+
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    
+    <!-- <script src={{ url_for('static', filename="main.js") }}></script> -->
+    <script>
+        $(document).ready(function() {
+            $("#button").click(function(){
+                $("p").hide();
+                responsiveVoice.setDefaultVoice("UK English Male");
+                responsiveVoice.speak("This is the train for Motton Upon Wuthbury. Serving Brinkley Ridge. Appleton Fair. Grommage. Thorston Parade. Manyweather Sutton. Bromble West. and... Motton Upon Wuthbury. The next stop is... Brinkley Ridge.");
+            });
+            	<!--responsiveVoice.speak("This is the train for {{ station_name }}")-->
+            
+            $("#parag").hover(function(){          
+               alert("paragraph hovering"); 
+               
+                
+            });
+            
+            
+        });
+        
+    </script>
+   
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="../static/main.js"></script>
+  </body>
+
+</html>

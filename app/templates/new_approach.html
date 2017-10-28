@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <script src="http://code.responsivevoice.org/responsivevoice.js">
+        </script>
+		<title>Station generator</title>
+		<meta name="viewport">
+		<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+		<style type="text/css">
+			.container {
+				max-width: 400px;
+				padding-top: 50px;
+
+			}
+
+			input {
+				max-width: 200px;
+			}
+            
+            #button {
+                font-size: 23px;
+                border-radius: 23px;
+                
+                
+            }
+		</style>
+
+	</head>
+
+	<body background="../static/temp_background.jpg">
+		<div class="container">
+
+			<!-- Button which will trigger the generation of a new name (eventually a series of names) -->
+			<button class="btn btn-default" id="button">New Journey</button>
+
+			<!-- This area is where the Ajax-returned data is displayed -->
+			<div id="response"> </div>
+
+
+		</div>
+
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#button").click(function(){
+                $("p").hide();
+
+				var announcement1 = "This is the train to. Horton Buxley. Serving, Dibbon Town. Fennington Brin. Wensleyfurd. Dibbon Rake. Wawlend. Wensleyfurd Sutton... and Horton Buxley... The next stop, is Dibbon Rake";
+				var announcement2 = "This is the train to. Cotshire Broadway. Serving Marbot Central. Cronebury Paps. East Worton. Bingnum Rye. Worton Cross Junction. Carlton Upon Wilkes. and Cotshire Broadway... The next stop, is East Worton";
+				var announcement3 = "This is the train to. Wurgait on Sea. Serving, Banner Bridge. Brookton Abbey. Brookton Weer. Stove. Pembelton Weer. Frommich on Sea. Boxley. and Wurgait on Sea... The next stop, is Banner Bridge";
+                var announcement4 = "This is the train to, Morpatch Sudden. Serving, Rain hill Park. Tuxtone Court. Waddon. Tuxtone Moor. Brimly. Placeford Juction. Rivor. Morpatch East. Ploonfoot Way... and Morpatch Sudden... The next stop, is Rain hill Park";
+                var announcement5 = "This is the train to Wigney Patch. Serving, Rajley. Hodden Street. Kiteshead Green. Kiteshead Rajley. Wigney Chase. Boorsbutton... and Wigney Patch... The next stop, is Rajley";
+                
+                var names = ["Horton Buxley", "Dibbon Town", "Fennington Brin", "Wensleyford", "Dibbon Rake", "Wallend", "Wensleyford Sutton", "Cotshire Broadway", "Marbot Central", "Cronebury Paps", "East Worton", "Bingam Rye", "Worton Cross Junction", "Carlton Upon Wilkes", "Corbleton Rye", "Cotshyre Mindle", "Boorlen Forest", "Old Whooton", "Whooton Sully" ];
+                
+                
+                function getRandomInt(min, max) {
+                    min = Math.ceil(min);
+                    max = Math.floor(max);
+                    return Math.floor(Math.random() * (max - min)) + min; 
+                    
+                }
+                
+                
+                
+                
+                responsiveVoice.setDefaultVoice("UK English Male");
+//                responsiveVoice.speak("This is the train for Motton Upon Wuthbury. Serving Brinkley Ridge. Appleton Fair. Grommage. Thorston Parade. Manyweather Sutton. Bromble West. Yolam. Brookborough West. Minstershire Sutton. PlaymundSownd. and... Motton Upon Wuthbury. The next stop is... Brinkley Ridge." + test);
+//                responsiveVoice.speak(names[getRandomInt(0,names.length)]);
+                
+  // starting point for the random generator              
+//                responsiveVoice.speak("This is the train to " + names[getRandomInt(0,names.length)]);  
+    
+                responsiveVoice.speak(announcement5);
+            });
+            	
+
+            $("#parag").hover(function(){
+               alert("paragraph hovering");
+
+
+            });
+
+
+        });
+
+    </script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  </body>
+
+</html>

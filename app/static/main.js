@@ -6,17 +6,18 @@ $(document).ready(function() {
 	// 	console.log("form has been submitted")
 	$('button').click(function(){
 		console.log("function working");
-		
-		$.ajax({
-			url: '/name_test/',
-			type: 'POST',
-			success: function(resp){
-				$('div#response').append(resp.data);
-			},
-			error: function(error) {
-				console.log.error;				
-			}
-		})
+
+
+//		$.ajax({
+//			url: '/name_test/',
+//			type: 'POST',
+//			success: function(resp){
+//				$('div#response').append(resp.data);
+//			},
+//			error: function(error) {
+//				console.log.error;
+//			}
+//		})
 		
 	// 	var val2 = $('input[name="number2').val()
 		
